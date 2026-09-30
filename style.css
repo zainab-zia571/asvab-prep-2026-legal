@@ -1,0 +1,300 @@
+/*
+ * ASVAB Prep 2026 — legal site
+ * Black and white, no images, no scripts, no web fonts: the whole site is two
+ * files on a static host, so it loads on a slow connection and keeps working
+ * if anything external disappears.
+ */
+
+:root {
+  --ink: #111111;
+  --ink-soft: #444444;
+  --ink-faint: #767676;
+  --paper: #ffffff;
+  --rule: #d8d8d8;
+  --measure: 46rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+.wrap {
+  max-width: var(--measure);
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- header and navigation ---------- */
+
+.masthead {
+  border-bottom: 2px solid var(--ink);
+}
+
+.masthead .wrap {
+  padding-top: 1.75rem;
+  padding-bottom: 1.25rem;
+}
+
+.wordmark {
+  display: inline-block;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.tagline {
+  margin: 0.2rem 0 0;
+  color: var(--ink-faint);
+  font-size: 0.9375rem;
+}
+
+nav {
+  margin-top: 1.1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  padding: 0.35rem 0;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: 0.9375rem;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a:focus-visible {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+nav a[aria-current='page'] {
+  color: var(--ink);
+  font-weight: 600;
+  border-bottom-color: var(--ink);
+}
+
+/* ---------- page body ---------- */
+
+main {
+  padding: 2.5rem 0 3rem;
+}
+
+h1 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.updated {
+  margin: 0 0 2rem;
+  color: var(--ink-faint);
+  font-size: 0.875rem;
+}
+
+h2 {
+  margin: 2.5rem 0 0.6rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  font-size: 1.1875rem;
+  line-height: 1.3;
+}
+
+h2:first-of-type {
+  margin-top: 2rem;
+}
+
+h3 {
+  margin: 1.5rem 0 0.4rem;
+  font-size: 1.0625rem;
+}
+
+p,
+li {
+  color: var(--ink-soft);
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+ul,
+ol {
+  margin: 0 0 1rem;
+  padding-left: 1.3rem;
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+strong {
+  color: var(--ink);
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.lead {
+  color: var(--ink);
+  font-size: 1.1875rem;
+}
+
+.callout {
+  margin: 0 0 1.5rem;
+  padding: 1rem 1.25rem;
+  border: 2px solid var(--ink);
+}
+
+.callout p:last-child {
+  margin-bottom: 0;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards li {
+  margin: 0;
+}
+
+.cards a {
+  display: block;
+  height: 100%;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+}
+
+.cards a:hover,
+.cards a:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.cards a:hover span,
+.cards a:focus-visible span {
+  color: var(--paper);
+}
+
+.cards strong {
+  display: block;
+  font-size: 1.0625rem;
+}
+
+.cards span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ink-faint);
+  font-size: 0.9375rem;
+}
+
+dl {
+  margin: 0 0 1rem;
+}
+
+dt {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+dd {
+  margin: 0.2rem 0 0;
+  color: var(--ink-soft);
+}
+
+/* ---------- footer ---------- */
+
+footer {
+  border-top: 2px solid var(--ink);
+  padding: 1.5rem 0 2.5rem;
+}
+
+footer p {
+  margin: 0 0 0.4rem;
+  color: var(--ink-faint);
+  font-size: 0.875rem;
+}
+
+footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+footer a {
+  color: var(--ink-soft);
+  font-size: 0.875rem;
+}
+
+/* ---------- small screens ---------- */
+
+@media (max-width: 30rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  main {
+    padding: 1.75rem 0 2.25rem;
+  }
+
+  h2 {
+    margin-top: 2rem;
+  }
+}
+
+/* ---------- print ---------- */
+
+@media print {
+  nav,
+  footer ul {
+    display: none;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
